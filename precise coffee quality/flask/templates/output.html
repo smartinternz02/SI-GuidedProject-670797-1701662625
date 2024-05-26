@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background:white;
+            color: black;
+        }
+         
+        #header{
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            background-size: cover;
+            background-position: center;
+        }
+        .container{
+            padding: 10px 10%;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        nav ul li{
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+        }
+        nav ul li a{
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+        }
+        nav ul li a::after{
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            position:absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+        nav ul li a:hover::after{
+            width: 100%;
+        }
+        .header-text{
+            margin-top: 20%;
+            font-size: 30px;
+            text-align: center;
+        }
+        .header-text h1{
+            font-size: 60px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .header-text h1 span{
+            color: #ff004f;
+        }
+        .button{
+            height: 40px;
+            width: 120px;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            margin-left: 30px;
+            align-items: flex-end;
+        }
+        .center-heading{
+            text-align: center;
+            margin-top: 50px;
+        }
+        .inspect-right{
+            flex-basis: 100%;
+        
+        }
+        .inspect-right h3{
+           color: black;
+           margin-right: 15px;
+           font-size: 25px;
+        }
+        .btn.btn1 {
+            height: 40px;
+            width: 120px;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            text-align: center;
+
+        }
+        .inspect-right form{
+           width: 100%;
+           height: 100%;
+        }
+        form input{
+           width: 100%;
+           border: 0;
+           outline: none;
+           background: azure;
+           padding: 15px;
+           margin: 15px 0;
+           color: black;
+           font-size: 18px ;
+           border-radius: 6px;
+        }
+        form btn1{
+           padding: 14px 60px;
+           font-size: 18px;
+           margin-top: 20px;
+           cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1>CHANDU</h1>
+                <ul id="sidemenu">
+                        <li><a href="#header">HOME</a></li>
+                        <li><a href="#ABOUT">ABOUT</a></li>
+                        <li><a href="#CONTACT">CONTACT</a></li>
+                        <button class="button">PREDICT</button>
+            </nav>
+                 <h2 class="center-heading"><b>COFFEE QUALITY</b>  </h2>
+                <div class="inspect-right">
+                    <form name="submit-to-google-sheet" action="{{ url_for('output')}}" method="post">
+                       <h3>Aroma</h3>
+                       <input type="text" name="Aroma" >
+                       <h3>Flavor</h3>
+                       <input type="text" name="Flavor" >
+                       <h3> Aftertaste</h3>
+                       <input type="text" name="Aftertaste" >
+                       <h3>Acidity</h3>
+                       <input type="text" name="Acidity">
+                       <h3>Body</h3>
+                       <input type="text" name="Body">
+                       <h3>Balance</h3>
+                       <input type="text" name="Balance">
+                       <h3>uniformity</h3>
+                       <input type="text" name="uniformity">
+                       <h3>Category One Defects</h3>
+                       <input type="text" name="Category One Defects">
+                       <h3>Quakers</h3>
+                       <input type="text" name="Quakers">
+                       <h3>Category Two Defects</h3>
+                       <input type="text" name="Category Two Defects">
+                       <h3>Color_encoded</h3>
+                       <input type="text" name="Color_encoded">
+                        <center><input type="submit" style="height: 50px; width: 150px; background-color: black; color: white;" value="Submit"></center>   
+                    </form>
+                </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+
